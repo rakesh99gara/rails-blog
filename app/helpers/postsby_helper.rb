@@ -1,0 +1,2 @@
+module PostsbyHelper
+end

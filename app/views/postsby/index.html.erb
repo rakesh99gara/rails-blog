@@ -1,0 +1,30 @@
+<% content_for :page_title, "All Users" %>
+
+<section class="section">
+    <div class="container">
+    <% @users.each do |user|%>
+        <div class="box card">
+            <div class="card-content">
+                <article class="media">
+                    <div class="media-content">
+                        <nav class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                <p class="title is-4"><%= link_to user.email[0..user.email.index("@")-1],postsby_path(user) %></p>    
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                <span>No of Posts :: <strong class="tag is-rounded"><%= user.posts.count%> </strong></span>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </div>            
+        </div>
+    <%end%>
+    </div>
+
+
+</section>

@@ -1,0 +1,52 @@
+<% content_for :page_title, @post.title%>
+
+<% content_for :page_footer, (link_to @post.user.email[0..@post.user.email.index("@")-1],postsby_path(@post.user_id),class:'navbar-item')%>
+
+
+<section class="section">
+    <div class="container">
+        <nav class="level">
+            <div class="level-left">
+                <p class="level-item">
+                    <strong>Actions</strong>
+                </p>
+            </div>
+            <% if user_signed_in?%>
+                <% if current_user.id == @post.user_id%>
+                <div class="level-right">
+                    <p class="level-item">
+                        <%= link_to "Edit",edit_post_path(@post),class:"button"%>
+                    </p>
+                    <p class="level-item">
+                        <%= link_to "Delete",post_path(@post),method: :delete,data:{confirm:"Are you Sure?"},class:"button is-danger"%> 
+                    </p>
+                </div>
+                <% end%>
+            <% end%>
+    
+
+        </nav>
+        <hr/>
+        <div class="content">
+            <p><%= @post.content %></p>
+        </div>
+    </div>
+</section>
+<section class="section comments">
+<div class="container">
+    <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h5>
+    <div class="show-comments">
+        <%= render @post.comments %>
+    </div>
+    <div class="comment-form">
+        <hr/>
+        <h3 class="subtitle is-3">Leave a comment</h3>
+        <% if user_signed_in?%>
+            <%= render 'comments/form' %>
+        <%end%>
+        <%if !user_signed_in?%>
+            <p class="subtitle is-5">Login to leave a comment</p>
+        <%end%>
+    </div>
+</div>
+</section>

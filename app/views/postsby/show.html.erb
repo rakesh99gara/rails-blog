@@ -1,0 +1,53 @@
+<% content_for :page_title, @user.email[0..@user.email.index("@")-1] %>
+
+<section class="section">
+    <div class="container">
+        <nav class="level">
+            <div class="level-left">
+                <p class="level-item">
+                    <strong>Posts</strong>
+                </p>
+            </div>
+        </nav>
+        <hr>
+        <% @posts.each do |post|%>
+            <div class="card box">
+                <div class="card-content">
+                    <article class="media">
+                        <div class="media-content level">
+                            <div class="level-left">
+                                <p class="title is-4 level-item"><%= link_to post.title,post_path(post) %></p>
+                            </div>
+                            <div class="level-right">
+                                <span class="level-item tag">No of Comments :: <strong class="is-rounded"><%= post.comments.count%> </strong></span>
+                            </div>
+                        </div>
+                    </article>
+                </div>           
+            </div>
+        <%end%>
+        <nav class="level">
+            <div class="level-left">
+                <p class="level-item">
+                    <strong>Comments on the posts</strong>
+                </p>
+            </div>
+        </nav>
+        <hr>
+        <% @comments.each do |comment|%>
+            <div class="card box">
+                <div class="card-content">
+                    <article class="media">
+                        <div class="media-content level">
+                            <div class="level-left">
+                                <p class="title is-4 "><%= link_to comment.comment,post_path(comment.post_id) %></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>           
+            </div>
+        <%end%>
+    </div>
+
+
+</section>

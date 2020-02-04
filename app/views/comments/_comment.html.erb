@@ -1,0 +1,28 @@
+
+<div class="box">
+    <article class="media">
+        <div class="media-content">
+            <div class="level">
+                <div class="left-level">
+                    <div class="level-item">
+                        <p>
+                            <strong><%= comment.name[0..comment.name.index("@")-1] %>: </strong>
+                            <div class="comment"> <%= comment.comment%></div>
+                        </p>
+                    </div>
+                </div>
+                <div class="right-level">
+                    <div class="level-item">
+                        <% if user_signed_in?%>
+                            <% if current_user.id == comment.user_id%>
+                                <%= link_to "Delete",[comment.post,comment],method: :delete,data:{confirm:"Are you Sure?"},class:"button is-danger"%>         
+                            <% end%>
+                        <% end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+

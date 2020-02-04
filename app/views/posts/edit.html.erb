@@ -1,0 +1,3 @@
+<% content_for :page_title, "Edit Post" %>
+<% content_for :page_footer, (link_to @post.user.email[0..@post.user.email.index("@")-1],postsby_path(@post.user_id),class:'navbar-item')%>
+<%= render 'form'%>

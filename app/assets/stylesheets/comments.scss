@@ -1,0 +1,15 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.level-item {
+	strong {
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	.comment {
+		color: rgb(49, 47, 47);
+		font-weight: 100;
+		letter-spacing: 1px;
+	}
+}

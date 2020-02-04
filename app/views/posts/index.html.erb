@@ -1,0 +1,32 @@
+<% content_for :page_title,"Home"%>
+<% content_for :page_footer,"No. of Posts :: "+@posts.count.to_s%>
+<section class="section">
+    <div class="container">
+        <% @posts.each do |post|%>
+                <div class="box card">
+                    <div class="card-content">
+                        <article class="media">
+                            <div class="media-content">
+                                <p class="title is-4"><%= link_to post.title,post %></p>
+                                <div class="content"><%= post.content %></div>
+                                <div class="comment-count">
+                                    <nav class="level">
+                                    <div class="level-left">
+                                            <p class="level-item">
+                                            <span class="tag is-rounded"><strong><%= post.comments.count%></strong>Comments</span>
+                                            </p>
+                                        </div>
+                                        <div class="level-right">
+                                            <p class="level-item">
+                                                <span class="tag is-rounded by">Post By :: <strong><%= link_to post.user.email[0..post.user.email.index("@")-1],postsby_path(post.user_id)%></strong></span>
+                                            </p>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </article>
+                    </div>           
+                </div> 
+        <%end%>
+    </div>
+</section>
