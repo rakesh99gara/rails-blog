@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -41,3 +42,6 @@ Things you may want to cover:
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div> -->
+=======
+# rails-blog
+>>>>>>> d88d917351a05fcbe18edee82732cdb65981f2f2
