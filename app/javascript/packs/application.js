@@ -16,14 +16,5 @@
 // const imagePath = (name) => images(name, true)
 
 require('jquery')
-$(document).ready(function(){
-    $(".email").focusout(function(){
-        alert("hi");
-    });
-    $("#post_title").focusout(function(){
-        alert("hi");
-    });
-    $("#post_content").focusout(function(){
-        alert("hi");
-    });
-});
+require("packs/posts")
+  

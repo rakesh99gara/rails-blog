@@ -1,0 +1,1 @@
+{"ast":null,"code":"$(document).ready(function () {});","map":{"version":3,"sources":["/var/www/html/riktam/assignment3/v1/my_blog/app/javascript/packs/posts.js"],"names":["$","document","ready"],"mappings":"AAAAA,CAAC,CAACC,QAAD,CAAD,CAAYC,KAAZ,CAAkB,YAAU,CAE3B,CAFD","sourcesContent":["$(document).ready(function(){\n    \n});"]},"metadata":{},"sourceType":"module"}
