@@ -15,4 +15,15 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+require('jquery')
+$(document).ready(function(){
+    $(".email").focusout(function(){
+        alert("hi");
+    });
+    $("#post_title").focusout(function(){
+        alert("hi");
+    });
+    $("#post_content").focusout(function(){
+        alert("hi");
+    });
+});
